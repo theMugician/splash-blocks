@@ -1,0 +1,175 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+// .wp-block-splash-blocks-slider {
+// 	background-color: #21759b;
+// 	color: #fff;
+// 	padding: 2px;
+// }
+// --slider-width: 1200px;
+// --slider-width: 800px;
+
+.splash-slider {
+    --slider-width: 100%;
+    --slider-height: 600px;
+    --wrapper-width: 100%;
+    // --slide-width: var(--slider-width);
+    --slide-width: 100%;
+    --slide-gap: 0;
+    width: 100%;
+    height: var(--slider-height);
+    // max-width: var(--slider-width);
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+	@media screen and (max-width: 1400px) {
+		--slider-width: 100%;
+		--slider-height: 400px;
+	}
+	/*
+    @include screen__lt-xl {
+        --slider-width: 800px;
+        --slider-height: 400px;
+    }
+    @include screen__lt-lg {
+        --slider-width: 640px;
+        --slider-height: 320px;
+    }
+    @include screen__lt-md {
+        --slider-width: 100%;
+        --slider-height: 320px;
+    }
+	*/
+    &__wrapper {
+        position: relative;
+        width: var(--wrapper-width);
+        height: var(--slider-height);
+    }
+    &__track {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        gap: var(--slide-gap);
+
+        // transition: left 300ms ease-in;
+        display: flex;
+        flex-direction:row;
+        &.shifting {
+            // transition: left 300ms ease-in;
+            transition: transform 300ms ease-in;
+        }
+    }
+    &__slide {
+        // width: var(--slide-width);
+        // float: left;
+        // padding-left: 20px;
+        // padding-right: 20px;
+		padding: 20px;
+        flex: 1 0 var(--slide-width);
+        // flex-basis: 1000px;
+        // width: var(--slide-width);
+        object-fit: cover;
+        height: 100%;
+		background-size: cover;
+		background-position: center;
+        img {
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        top: 45%;
+        display: flex;
+        // padding: 2rem;
+        gap: 2rem;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+		/*
+        @include screen__lt-lg {
+            padding: 0.8rem;
+        }
+		*/
+    }
+    &__arrow {
+        border: 0;
+        background: white;
+        border-radius: 50%;
+        color: black;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        min-width: 40px;
+        aspect-ratio: 1;
+        max-width: 4rem;
+		&--prev {
+			margin-left: 20px;
+		}
+		&--next {
+			margin-right: 20px;
+		}
+	}
+		/*
+        @include screen__lt-lg {
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            max-width: 26px;
+            padding: 0;
+        }
+		*/
+    &__dots {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+    }
+    &__dot {
+        --dot__size: 24px;
+		/*
+        @include screen__lt-md {
+            --dot__size: 18px;
+            --dot__size: 18px;
+        }
+		*/
+        width: var(--dot__size);
+        height: var(--dot__size);
+        border-radius: 50%;
+        background-color: transparent;
+        margin-left: 10px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: var(--dot__size);
+            height: var(--dot__size);
+            border-radius: 50%;
+            border: 0;
+            background-color: transparent;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(var(--dot__size)/3);
+            left: calc(var(--dot__size)/3);
+            width: calc(var(--dot__size)/3);
+            height: calc(var(--dot__size)/3);
+            border-radius: 50%;
+            background-color: white;
+        }
+        &.is-active::before {
+            border: 2px solid white;
+        }
+    }
+}
+
+
+

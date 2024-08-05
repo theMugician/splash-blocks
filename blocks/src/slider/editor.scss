@@ -1,0 +1,62 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.splash-slider {
+    --slider-width: 100%;
+    --slider-height: 400px;
+    --wrapper-width: 100%;
+    --slide-width: auto;
+    --slide-gap: 0;
+    width: 100%;
+    height: var(--slider-height);
+    // max-width: var(--slider-width);
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+	@media screen and (max-width: 1600px) {
+		--slider-width: 100%;
+		--slider-height: 400px;
+	}
+    &__wrapper {
+        overflow-x: scroll;
+        .block-list-appender {
+            margin-left: 16px;
+            position: relative;
+        }
+    }
+    &__slide {
+        flex-basis: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: var(--slide-width);
+        padding: 0;
+    }
+    &__track {
+        width: 100%;
+    }
+    &__add-slide {
+        position: absolute;
+        top: 0;
+    }
+
+    & > .block-editor-inner-blocks > .block-editor-block-list__layout {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding: 2px;
+        .block-list-appender {
+            margin-left: 16px;
+            position: relative;
+        }
+    }
+    // .block-editor-block-list__block .block-list-appender {
+    //     margin-left: 20px;
+    //     position: relative;
+    // }
+}

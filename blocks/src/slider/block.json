@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "splash-blocks/slider",
+	"version": "0.1.0",
+	"title": "Slider",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Slider block",
+	"example": {},
+	"supports": {
+		"html": false,
+		"innerBlocks": true
+	},
+	"textdomain": "slider",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"clientId": {
+			"type": "string"
+		},
+		"slidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"dots": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}
