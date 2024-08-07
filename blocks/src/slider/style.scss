@@ -15,7 +15,8 @@
 
 .splash-slider {
     --slider-width: 100%;
-    --slider-height: 600px;
+    --slider-height: auto;
+    // --slider-height: 600px;
     --wrapper-width: 100%;
     // --slide-width: var(--slider-width);
     --slide-width: 100%;
@@ -28,7 +29,7 @@
     cursor: grab;
 	@media screen and (max-width: 1400px) {
 		--slider-width: 100%;
-		--slider-height: 400px;
+		--slider-height: auto;
 	}
 	/*
     @include screen__lt-xl {
@@ -71,13 +72,18 @@
         // padding-left: 20px;
         // padding-right: 20px;
 		padding: 20px;
-        flex: 1 0 var(--slide-width);
+        flex: 0 0 var(--slide-width);
         // flex-basis: 1000px;
         // width: var(--slide-width);
         object-fit: cover;
-        height: 100%;
+        height: auto;
 		background-size: cover;
 		background-position: center;
+        & > * {
+            width: 100%;
+            box-sizing: border-box;
+            max-width: max-content;
+        }
         img {
             user-select: none;
             pointer-events: none;
